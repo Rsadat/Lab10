@@ -1,0 +1,28 @@
+1. done.
+
+2a. pthread_mutex_init, pthread_cond_init.
+
+2b. when pthread_mutex_lock is called by thread A but thread B is using it.
+the function will block thread B from using it until the calling thread can 
+get ownership.
+
+3a. Each thread represents a specific role such as the customer thread and the waiter thread.
+
+3b. One customer is served by one waiter at a time.
+
+3c. 
+	1. The customer is ready to be seated (ready to seat customer)
+	2. waiter used (seat_customer) to seat customer at the table.
+	3. Customer used (order_placed_by_customer) to place their order.
+	4. Waiter used(bring_food_to_customer) to bring order.
+	5. customer used (service_completed_for_customer to show they are
+	   finished and no long need anymore services.
+
+
+4a. 
+	VIOLATION: Customer 0 placed an order but the table is empty!
+	VIOLATION: Waiter served dish but order was not taken!
+	    
+4b. No, but you get either of the two.
+
+5a.
